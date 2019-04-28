@@ -1,3 +1,6 @@
+*{
+ font-family: "Lucida Sans Unicode, Lucida Grande, sans-serif";
+}
 /* Estilo do cabeçalho */
 header {
   min-height: 60px;
@@ -6,8 +9,12 @@ header {
   right: 0;
   left: 0;
   border-bottom: 1px solid #ccc;
-  background: #ececec;
+  background: #202EE8;
   z-index: 999;
+}
+header > nav > ul > li > a {
+  color: white;
+  font-weight: bold;
 }
 /* Estilo do corpo */
 body {
@@ -98,6 +105,11 @@ input#control-nav {
   background-color: rgb(0, 92, 0); /* Green */
   color: white;
 }
+#calendario:hover {
+  background: rgb(110, 110, 199);
+  transition: 0.4s;
+  -webkit-transition: 0.4s;
+}
 /* Estilo da sessão em alta */
 #em_alta .post {
   border: 1px black solid;
@@ -144,8 +156,6 @@ input#control-nav {
   margin:-50px 0 0; /* negative fixed header height */
 }
 footer {
-  /* TODO: Modo mobile a section overlap o footer */
-  padding: 10px;
   text-align: center;
 }
 /* Estilo para desktop */
@@ -168,7 +178,6 @@ footer {
     display: inline-block;
     margin: 0px 20px 20px 0;
     padding-bottom: 20px;
-    /*TODO: border-left: solid 1px black; */
   }
   header nav > ul > li:first-child{
       border-left: none;

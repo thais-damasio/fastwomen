@@ -47,26 +47,39 @@
 
         <!-- Copor da página -->
         <div class="linkagens">
-            <a href="../home/home.html">Categorias</a> > <b>Calendário Menstrual</b>
+            <a href="../../home/home.html">Home</a> > <a href="../../categorias/categorias.html">Categorias</a> > <b>Calendário Menstrual</b>
         </div>
         <h1>Calendário Menstrual</h1>
+        <!-- Introdução -->
+        <p>
+                Phasellus consectetur sed nunc et ultrices. Duis at finibus sem. Mauris tellus massa,
+                consectetur quis molestie sed, fringilla non nunc. Morbi a magna varius diam auctor
+                fringilla. Nam rhoncus dictum neque volutpat auctor. Morbi et est sollicitudin, commodo
+                nisi eu, vehicula purus. Nunc congue nisi blandit ipsum eleifend ullamcorper. Sed eget 
+                quam purus. Cras sagittis pellentesque nisl id viverra. Etiam luctus venenatis ligula ac
+                maximus. Curabitur aliquet vel eros at pretium. Aenean iaculis neque felis, vitae aliquet
+                nisi facilisis in.
+        </p>
         <!-- Campos de preenchimento para cálculo -->
         <div class="steps">
             <div class="row justify-content-center">
                 <div class="step col-md-4 col-sm-5 col-xs-12">
-                    <b>1.</b> <label>Quando foi sua última menstruação?</label>
+                    <h5><b>1.</b> Quando foi sua última menstruação?</h5>
                     <input id="ultima_menstruacao" type="date" min="2015-01-01" onkeypress="return false">
+                    <small>Campo Obrigatório *</small>
                 </div>
                 <div class="step col-md-4 col-sm-5 col-xs-12">
-                    <b>2.</b> <label>Quantos dias ela durou?</label>
+                    <h5><b>2.</b> <label>Quantos dias ela durou?</h5>
                     <input id="duracao_menstruacao" type="number" value="5" min="1">
+                    <small>Campo Obrigatório *</small>
                 </div>
                 <div class="step col-md-3 col-sm-5 col-xs-12 ">
-                    <b>3.</b> <label>Quanto dura o seu ciclo?</label>
+                    <h5><b>3.</b> <label>Quanto dura o seu ciclo?</h5>
                     <input id="duracao_ciclo" type="number" value="28" min="1">
+                    <small>Campo Obrigatório *</small>
                 </div>
             </div>
-            <button onclick="exibirCalendario()">Calcular meu calendário</button>
+            <button onclick="exibirCalendario()"><i class="fas fa-calculator"></i> Calcular meu calendário</button>
         </div>
         <!-- Calendário menstrual -->
         <div id="resultado">
@@ -148,4 +161,8 @@
             </div>
         </div>
     </body>
+
+    <footer>
+        <span>Copyright © 2019 | IHC - Sistemas de Informação</span>
+    </footer>
 </html>

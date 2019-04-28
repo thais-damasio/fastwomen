@@ -25,13 +25,38 @@ body {
     padding: 30px;
 }
 body h1 {
+    padding-top: 30px; 
     text-align: center;
+}
+body p{
+    padding: 0px 40px;
+    text-align: justify;
+    text-justify: inter-word;
 }
 /* Estilo dos inputs de configuração */
 .steps {
     text-align: center;
 }
+.step {
+    padding: 15px;
+    border: 1px black solid;
+    margin: 3px;
+}
+.step input[type="number"] {
+    width: 35%;
+}
+.step input[type="date"]::-ms-clear{
+    display: none;
+}
+.step input[type="date"]::-webkit-clear-button {
+    display: none;
+}
+.step small{
+    display: block;
+    color: grey;
+}
 .steps button {
+  margin: 10px;
   background-color: #4CAF50;
   border: none;
   color: white;
@@ -42,11 +67,6 @@ body h1 {
   font-size: 12px;
   -webkit-transition-duration: 0.4s; /* Safari */
   transition-duration: 0.4s;
-}
-.step {
-    padding: 15px;
-    border: 1px black solid;
-    margin: 3px;
 }
 /* Resultado em calendário */
 #resultado {
@@ -63,6 +83,10 @@ body h1 {
 }
 .ovulacao {
     background-color: #2635b8;
+}
+footer {
+  padding: 10px;
+  text-align: center;
 }
 /* Estilo para desktop */
 @media screen and (min-width: 767px){

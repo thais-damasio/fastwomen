@@ -30,6 +30,7 @@ function exibirCalendario() {
     if(validarEntradas(ultima_menstruacao, duracao_menstruacao, duracao_ciclo)){
         showCalendar(ultima_menstruacao, duracao_menstruacao, duracao_ciclo, currentMonth, currentYear);
         document.getElementById("resultado").style.visibility = "visible";
+        window.location.href = "#resultado";
     }
 }
 function validarEntradas(ultima_menstruacao, duracao_menstruacao, duracao_ciclo) {
