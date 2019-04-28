@@ -46,15 +46,15 @@ input#control-nav {
 #carrousel > h1{
   margin: 0;
   padding-top: 200px;
-  text-shadow: 2px 2px black;
-  color: white;
+  text-shadow: 2px 2px white;
+  color: black;
   text-align: center;
   font-size: 8vw;
 }
 #carrousel > h2{ 
   text-align: center;
   font-size: 3vw;
-  color: white;
+  color: black;
   margin: 0;
 }
 /* Estilo geral das sessões */
@@ -72,26 +72,25 @@ input#control-nav {
   border: 1px black solid;
   display: inline-block;
   margin: 3px;
-  padding: 25px;
+  padding: 16px;
+  font-size: 15px;
 }
 #categorias .categoria h1{
-  font-size: 2vw;
+  font-size: 17px;
   font-weight: bold;
 }
 #categorias .categoria i{
-  font-size: 5vw;
+  font-size: 2vw;
 }
 #categorias .categoria button{
-  right: 0;
-  left: 0;
   background-color: #4CAF50;
   border: none;
   color: white;
-  padding: 15px 15px;
+  padding: 10px 10px;
   border-radius: 50%;
   text-align: center;
   text-decoration: none;
-  font-size: 16px;
+  font-size: 12px;
   -webkit-transition-duration: 0.4s; /* Safari */
   transition-duration: 0.4s;
   float: right;
@@ -99,6 +98,44 @@ input#control-nav {
 #categorias .categoria button:hover {
   background-color: rgb(0, 92, 0); /* Green */
   color: white;
+}
+/* Estilo da sessão em alta */
+#em_alta .post {
+  border: 1px black solid;
+  display: inline-block;
+  margin: 3px;
+  padding: 16px;
+  font-size: 15px;
+}
+#em_alta .post h1{
+  font-size: 17px;
+  font-weight: bold;
+}
+#em_alta .post i{
+  font-size: 2vw;
+}
+#em_alta .post button{ 
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 10px 10px;
+  border-radius: 50%;
+  text-align: center;
+  text-decoration: none;
+  font-size: 12px;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+  float: right;
+}
+#em_alta .post button:hover {
+  background-color: rgb(0, 92, 0); /* Green */
+  color: white;
+}
+#em_alta .veja_mais {
+  height: 30px;
+}
+#em_alta .veja_mais a{
+  float: right;
 }
 /* Espaço para salto de âncora */
 .jumptarget::before {
@@ -184,7 +221,17 @@ footer {
   }
   /* Estilo da sessão de categoria */
   #categorias .categoria h1{
-    font-size: 4vw;
+    font-size: 16px;
+  }
+  #categorias .categoria i{
+    font-size: 20px;
+  }
+  /* Estilo da sessão de em alta */
+  #em_alta .post h1{
+    font-size: 16px;
+  }
+  #em_alta .post i{
+    font-size: 20px;
   }
   /* Exibi o botão de expandir menu */
   header .control-nav {
