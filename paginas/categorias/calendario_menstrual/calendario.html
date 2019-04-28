@@ -1,0 +1,168 @@
+<html>
+    
+    <head>
+        <!-- Configurações gerais -->
+        <meta charset="UTF-8">
+        <meta name="description" content="Descrição do calendário">
+        <meta name="keywords" content="calendario, menstrual, mentruação, saúde, mulher">
+        <meta name="author" content="Jéssica Mota, Juliana Ribeiro & Thaís Damásio">
+        <meta http-equiv="Content-Language" content="pt-br">
+        <meta name="viewport" 
+        content="width=device-width, height=device-height, initial-scale=1, maximum-scale=1, user-scalable=no" />
+        <!-- Estilos da página -->
+        <link rel="stylesheet" type="text/css" href="calendario.style.css">
+        <link href="../../../vendor/fontawesome/css/all.css" rel="stylesheet">
+        <link href="../../../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+        <!-- Scripts da página -->
+        <script type="text/javascript" src="calendario.js"></script>
+        <title>Fast Women - Calendário Menstrual</title>
+    </head>
+
+    <body>
+        <!-- Cabeçalho da página -->
+        <header>    
+            <!-- Controle de menu para celulares -->
+            <input type="checkbox" id="control-nav"/>
+            <label for="control-nav" class="control-nav"></label>
+            <label for="control-nav" class="control-nav-close"></label>
+            <!--  -->
+
+            <nav>
+                <ul>
+                    <li class="dropdown">
+                        <a href="../home/home.html#categorias" class="dropdown-title">Categorias</a>
+                        <div class="dropdown-content">
+                            <a href="#">Calendário Menstrual</a>
+                            <a href="#">Receitas Rápidas</a>
+                            <a href="#">Saúde Capilar</a>
+                            <a href="#">Saúde Íntima</a>
+                        </div>
+                    </li>
+                    <li><a href="../../home/home.html#sobre">Sobre</a></li>
+                    <li><a href="../../em_alta/em_alta.html">Em alta</a></li>
+                    <li><a href="../../home/home.html#sobre_nos">Quem somos nós</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <!-- Copor da página -->
+        <div class="linkagens">
+            <a href="../../home/home.html">Home</a> > <a href="../../categorias/categorias.html">Categorias</a> > <b>Calendário Menstrual</b>
+        </div>
+        <h1>Calendário Menstrual</h1>
+        <!-- Introdução -->
+        <p>
+                Phasellus consectetur sed nunc et ultrices. Duis at finibus sem. Mauris tellus massa,
+                consectetur quis molestie sed, fringilla non nunc. Morbi a magna varius diam auctor
+                fringilla. Nam rhoncus dictum neque volutpat auctor. Morbi et est sollicitudin, commodo
+                nisi eu, vehicula purus. Nunc congue nisi blandit ipsum eleifend ullamcorper. Sed eget 
+                quam purus. Cras sagittis pellentesque nisl id viverra. Etiam luctus venenatis ligula ac
+                maximus. Curabitur aliquet vel eros at pretium. Aenean iaculis neque felis, vitae aliquet
+                nisi facilisis in.
+        </p>
+        <!-- Campos de preenchimento para cálculo -->
+        <div class="steps">
+            <div class="row justify-content-center">
+                <div class="step col-md-4 col-sm-5 col-xs-12">
+                    <h5><b>1.</b> Quando foi sua última menstruação?</h5>
+                    <input id="ultima_menstruacao" type="date" min="2015-01-01" onkeypress="return false">
+                    <small>Campo Obrigatório *</small>
+                </div>
+                <div class="step col-md-4 col-sm-5 col-xs-12">
+                    <h5><b>2.</b> <label>Quantos dias ela durou?</h5>
+                    <input id="duracao_menstruacao" type="number" value="5" min="1">
+                    <small>Campo Obrigatório *</small>
+                </div>
+                <div class="step col-md-3 col-sm-5 col-xs-12 ">
+                    <h5><b>3.</b> <label>Quanto dura o seu ciclo?</h5>
+                    <input id="duracao_ciclo" type="number" value="28" min="1">
+                    <small>Campo Obrigatório *</small>
+                </div>
+            </div>
+            <button onclick="exibirCalendario()"><i class="fas fa-calculator"></i> Calcular meu calendário</button>
+        </div>
+        <!-- Calendário menstrual -->
+        <div id="resultado">
+            <div class="container col-sm-12 col-md-8 col-lg-8 mt-5">
+                <div class="card">
+                    <!-- Mês correspondente no calendário -->
+                    <h3 class="card-header" id="monthAndYear"></h3>
+                    <!-- Calendário -->
+                    <table class="table table-bordered table-responsive-sm" id="calendar">
+                        <!-- Dias da semana -->
+                        <thead>
+                        <tr>
+                            <th>Dom</th>
+                            <th>Seg</th>
+                            <th>Ter</th>
+                            <th>Qua</th>
+                            <th>Qui</th>
+                            <th>Sex</th>
+                            <th>Sab</th>
+                        </tr>
+                        </thead>
+                        <!-- Dias do mês -->
+                        <tbody id="calendar-body">            
+                        </tbody>
+                    </table>
+
+                    <!-- Navegação entre meses do ano -->
+                    <div class="form-inline">            
+                        <button class="btn btn-outline-primary col-sm-6" id="previous" onclick="previous()">Anterior</button>
+            
+                        <button class="btn btn-outline-primary col-sm-6" id="next" onclick="next()">Próximo</button>
+                    </div>
+                    <hr>
+                    <form class="form-inline">
+                        <label class="lead mr-2 ml-2" for="month">Ir para: </label>
+                        <!-- Selecionar um mês do ano -->
+                        <select class="form-control col-sm-4" name="month" id="month" onchange="jump()">
+                            <option value=0>Jan</option>
+                            <option value=1>Fev</option>
+                            <option value=2>Mar</option>
+                            <option value=3>Abr</option>
+                            <option value=4>Mai</option>
+                            <option value=5>Jun</option>
+                            <option value=6>Jul</option>
+                            <option value=7>Ago</option>
+                            <option value=8>Set</option>
+                            <option value=9>Out</option>
+                            <option value=10>Nov</option>
+                            <option value=11>Dez</option>
+                        </select>            
+                        <!-- Selecionar um ano específico -->
+                        <label for="year"></label>
+                        <select class="form-control col-sm-4" name="year" id="year" onchange="jump()">
+                            <option value=2010>2010</option>
+                            <option value=2011>2011</option>
+                            <option value=2012>2012</option>
+                            <option value=2013>2013</option>
+                            <option value=2014>2014</option>
+                            <option value=2015>2015</option>
+                            <option value=2016>2016</option>
+                            <option value=2017>2017</option>
+                            <option value=2018>2018</option>
+                            <option value=2019>2019</option>
+                            <option value=2020>2020</option>
+                            <option value=2021>2021</option>
+                            <option value=2022>2022</option>
+                            <option value=2023>2023</option>
+                            <option value=2024>2024</option>
+                            <option value=2025>2025</option>
+                            <option value=2026>2026</option>
+                            <option value=2027>2027</option>
+                            <option value=2028>2028</option>
+                            <option value=2029>2029</option>
+                            <option value=2030>2030</option>
+                        </select>
+                        <!--  -->
+                    </form>
+                </div>
+            </div>
+        </div>
+    </body>
+
+    <footer>
+        <span>Copyright © 2019 | IHC - Sistemas de Informação</span>
+    </footer>
+</html>

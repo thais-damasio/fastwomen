@@ -17,15 +17,76 @@ input#control-nav {
   opacity: 0;
 }
 /* Estilo do corpo da página */
+.linkagens {
+    float: right;
+}
 body {
     margin-top: 60px !important;
     padding: 30px;
 }
 body h1 {
+    padding-top: 30px; 
     text-align: center;
 }
-.linkagens {
-    float: right;
+body p{
+    padding: 0px 40px;
+    text-align: justify;
+    text-justify: inter-word;
+}
+/* Estilo dos inputs de configuração */
+.steps {
+    text-align: center;
+}
+.step {
+    padding: 15px;
+    border: 1px black solid;
+    margin: 3px;
+}
+.step input[type="number"] {
+    width: 35%;
+}
+.step input[type="date"]::-ms-clear{
+    display: none;
+}
+.step input[type="date"]::-webkit-clear-button {
+    display: none;
+}
+.step small{
+    display: block;
+    color: grey;
+}
+.steps button {
+  margin: 10px;
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 10px 10px;
+  border-radius: 10px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 12px;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+}
+/* Resultado em calendário */
+#resultado {
+    visibility: hidden;
+}
+.dia_menstruacao {
+    background-color: #b8173f !important;
+}
+.pre_menstruacao {
+    background-color: #ec552f;
+}
+.pos_menstruacao {
+    background-color: #a96ff5;
+}
+.ovulacao {
+    background-color: #2635b8;
+}
+footer {
+  padding: 10px;
+  text-align: center;
 }
 /* Estilo para desktop */
 @media screen and (min-width: 767px){
@@ -167,4 +228,3 @@ body h1 {
       display: block;
     }
 }
-    
