@@ -22,7 +22,7 @@ input#control-nav {
   left: -9999px;
   opacity: 0;
 }
-/* Estilo das sessões da página */
+/* Estilo da sessão de carrousel */
 #carrousel {
   position: relative;
   height: 100%;
@@ -57,16 +57,50 @@ input#control-nav {
   color: white;
   margin: 0;
 }
+/* Estilo geral das sessões */
 #em_alta,
 #sobre_nos,
 #categorias,
 #sobre {
   padding: 10px 50px;
-  height: 100%;
   border-top: 1px solid #ccc;
   background: white;
   font-size: 20px;
 }
+/* Estilo da sessão de categorias */
+#categorias .categoria {
+  border: 1px black solid;
+  display: inline-block;
+  margin: 3px;
+  padding: 25px;
+}
+#categorias .categoria h1{
+  font-size: 2vw;
+  font-weight: bold;
+}
+#categorias .categoria i{
+  font-size: 5vw;
+}
+#categorias .categoria button{
+  right: 0;
+  left: 0;
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 15px 15px;
+  border-radius: 50%;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+  float: right;
+}
+#categorias .categoria button:hover {
+  background-color: rgb(0, 92, 0); /* Green */
+  color: white;
+}
+/* Espaço para salto de âncora */
 .jumptarget::before {
   content:"";
   display:block;
@@ -130,6 +164,7 @@ footer {
 }
 /* Menu lateral para celulares */
 @media screen and (max-width: 767px) {
+  /* Estilo da sessão de carrousel */
   #carrousel > h1{
     font-size: 15vw;
   }
@@ -139,13 +174,17 @@ footer {
     color: white;
     margin: 0;
   }
-  /* Estilo das sessões */
+  /* Estilo geral das sessões */
   #categorias > h1,
   #em_alta > h1,
   #sobre_nos > h1,
   #sobre > h1{
     text-align: center;
     font-size: 9vw;
+  }
+  /* Estilo da sessão de categoria */
+  #categorias .categoria h1{
+    font-size: 4vw;
   }
   /* Exibi o botão de expandir menu */
   header .control-nav {
