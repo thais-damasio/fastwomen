@@ -208,7 +208,7 @@ footer {
   #carrousel > h2{ 
     text-align: center;
     font-size: 6vw;
-    color: white;
+    color: black;
     margin: 0;
   }
   /* Estilo geral das sessões */
@@ -277,6 +277,7 @@ footer {
     left: 0;
     bottom: 0;
     width: 250px;
+    padding: 30px 15px;
     border-left: 1px solid #ccc;
     background: #fff;
     overflow-x: auto;
@@ -296,5 +297,35 @@ footer {
     -webkit-transform: translate(0, 0);
     -ms-transform: translate(0, 0);
     transform: translate(0, 0);
+  }
+  /* Menu lateral */
+  header nav ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  header nav li {
+    padding: 5px;
+    border-bottom: 1px black solid;
+  }
+  /* Menu dropdown */
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  .dropdown-content a {
+    color: black;
+    padding: 8px 8px;
+    text-decoration: none;
+    display: block;
+  }
+  .dropdown-content a:hover {
+    background-color: #f1f1f1
+  }
+  .dropdown:hover .dropdown-content {
+    display: block;
   }
 }

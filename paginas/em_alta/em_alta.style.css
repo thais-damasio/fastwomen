@@ -1,0 +1,29 @@
+/* Estilo do corpo da página */
+body {
+    padding: 30px;
+}
+body h1 {
+    text-align: center;
+}
+.linkagens {
+    float: right;
+}
+/* Estilo das postagens em alta */
+.post {
+    margin: 10px 0;
+    padding: 10px;
+    border: 1px rgb(184, 176, 176) solid;
+}
+.post img {
+    width: 100%;
+}
+.post h4 {
+    font-weight: bold;
+}
+
+/* Menu lateral para celulares */
+@media screen and (max-width: 767px) {
+    .post img {
+        width: 100%;
+    }
+}
