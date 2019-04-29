@@ -143,7 +143,8 @@ function showCalendar(ul_menstruacao, menstruacao, ciclo, month, year) {
                 limitOvAnt = initOvAnt - 5;
 
                 let cell = document.createElement("td");
-                let cellText = document.createTextNode(date);
+                var a = date + "|" + calc;
+                let cellText = document.createTextNode(a);
 
                 //Marca a data de hoje
                 if (date === today.getDate() && year === today.getFullYear() && month === today.getMonth()) {

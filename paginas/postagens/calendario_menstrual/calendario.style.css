@@ -1,17 +1,13 @@
-*{
-  font-family: "Lucida Sans Unicode, Lucida Grande, sans-serif";
- }
 /* Estilo do cabeçalho */
 header {
-  padding: 0px;
-  min-height: 60px;
-  position: fixed;
-  top: 0;
-  right: 0;
-  left: 0;
-  border-bottom: 1px solid #ccc;
-  background: #202EE8;
-  z-index: 999;
+    min-height: 60px;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    border-bottom: 1px solid #ccc;
+    background: #ececec;
+    z-index: 999;
 }
 /* Botão de menu oculto */
 input#control-nav {
@@ -45,13 +41,6 @@ body p{
     padding: 15px;
     border: 1px black solid;
     margin: 3px;
-    background: #2469FF;
-    color: white;
-    border-radius: 10px;
-}
-.step h5 {
-  font-size: 16px;
-  font-weight: bold;
 }
 .step input[type="number"] {
     width: 35%;
@@ -64,7 +53,7 @@ body p{
 }
 .step small{
     display: block;
-    color: white;
+    color: grey;
 }
 .steps button {
   margin: 10px;
@@ -101,59 +90,45 @@ footer {
 }
 /* Estilo para desktop */
 @media screen and (min-width: 767px){
-    
-  /* Estilo do menu suspenso */
-  nav {
-    position: absolute;
-    right: 0;
-  }
-  /* Menus lado a lado */
-  header nav > ul > li{
-    display: inline-block;
-    margin: 0;
-    padding-bottom: 20px;
-  }
-  header nav > ul > li:first-child{
-      border-left: none;
-  }
-  header nav > ul > li > a {
-    text-decoration: none;
-  }
-  header > nav > ul > li > a {
-    padding: 10px;
-    background: #2D1880;
-    margin: 0;
-    color: white;
-    font-weight: bold;
-  }
-  header > nav > ul > li > a:hover {
-    background: #6E4AFF;
-    color: white;
-    transition: 0.4s;
-    -webkit-transition: 0.4s;
-  }
-  /* Menu dropdown */
-  .dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #6E4AFF;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
-  }
-  .dropdown-content a {
-    font-size: 14px;
-    color: black;
-    padding: 3px 8px;
-    text-decoration: none;
-    display: block;
-  }
-  .dropdown-content a:hover {
-    background-color: #f1f1f1
-  }
-  .dropdown:hover .dropdown-content {
-    display: block;
-  }
+    /* Estilo do menu suspenso */
+    nav {
+      position: absolute;
+      right: 0;
+    }
+    /* Menus lado a lado */
+    header nav > ul > li{
+      display: inline-block;
+      margin: 0px 20px 20px 0;
+      padding-bottom: 20px;
+      /*TODO: border-left: solid 1px black; */
+    }
+    header nav > ul > li:first-child{
+        border-left: none;
+    }
+    header nav > ul > li > a {
+      text-decoration: none;
+    }
+    /* Menu dropdown */
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #f9f9f9;
+      min-width: 160px;
+      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+      z-index: 1;
+    }
+    .dropdown-content a {
+      color: black;
+      padding: 8px 8px;
+      text-decoration: none;
+      display: block;
+    }
+    .dropdown-content a:hover {
+      background-color: #f1f1f1
+    }
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
 }
 /* Menu lateral para celulares */
 @media screen and (max-width: 767px) {
