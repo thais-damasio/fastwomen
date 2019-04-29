@@ -12,10 +12,6 @@ header {
   background: #202EE8;
   z-index: 999;
 }
-header > nav > ul > li > a {
-  color: white;
-  font-weight: bold;
-}
 /* Estilo do corpo */
 body {
   background: grey;
@@ -30,11 +26,28 @@ input#control-nav {
 }
 /* Estilo da sessão de carrousel */
 #carrousel {
+  text-align: center; 
   position: relative;
   height: 100%;
   z-index: 5;
   border-top: 1px solid #ccc;
   font-size: 20px;
+}
+#carrousel .vamosla {
+  border-radius: 5px;
+  border: 2px solid #202EE8;
+  background-color: transparent;
+  color: black;
+  padding: 10px 20px;
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+}
+#carrousel .vamosla:hover {
+  background-color: #5630FF;
+  transition: 0.4s;
+  -webkit-transition: 0.4s;
+  color: white;
 }
 #carrousel .bg{
   position: absolute;
@@ -51,15 +64,15 @@ input#control-nav {
 }
 #carrousel > h1{
   margin: 0;
-  padding-top: 200px;
+  padding-top: 120px;
   text-shadow: 2px 2px white;
   color: black;
   text-align: center;
-  font-size: 8vw;
+  font-size: 7vw;
 }
 #carrousel > h2{ 
   text-align: center;
-  font-size: 3vw;
+  font-size: 2vw;
   color: black;
   margin: 0;
 }
@@ -68,6 +81,9 @@ input#control-nav {
 #sobre_nos,
 #categorias,
 #sobre {
+  text-align: justify;
+  text-justify: inter-word;
+  min-height: 110%;
   padding: 10px 50px;
   border-top: 1px solid #ccc;
   background: white;
@@ -78,7 +94,7 @@ input#control-nav {
   border: 1px black solid;
   display: inline-block;
   margin: 3px;
-  padding: 16px;
+  padding: 10px;
   font-size: 15px;
 }
 #categorias .categoria h1{
@@ -105,17 +121,22 @@ input#control-nav {
   background-color: rgb(0, 92, 0); /* Green */
   color: white;
 }
+#saude_capilar:hover,
+#saude_intima:hover,
+#receitas_rapidas:hover,
 #calendario:hover {
   background: rgb(110, 110, 199);
+  color: white;
   transition: 0.4s;
   -webkit-transition: 0.4s;
 }
 /* Estilo da sessão em alta */
 #em_alta .post {
+  position: relative;
   border: 1px black solid;
   display: inline-block;
   margin: 3px;
-  padding: 16px;
+  padding: 10px;
   font-size: 15px;
 }
 #em_alta .post h1{
@@ -126,9 +147,13 @@ input#control-nav {
   font-size: 2vw;
 }
 #em_alta .post button{ 
+  bottom: 0;
+  position: absolute;
+  right: 0;
   background-color: #4CAF50;
   border: none;
   color: white;
+  margin: 10px;
   padding: 10px 10px;
   border-radius: 50%;
   text-align: center;
@@ -148,6 +173,11 @@ input#control-nav {
 #em_alta .veja_mais a{
   float: right;
 }
+/* Estilo da sessão sobre nós */
+#sobre_nos {
+  text-align: justify;
+  text-justify: inter-word;
+}
 /* Espaço para salto de âncora */
 .jumptarget::before {
   content:"";
@@ -160,6 +190,12 @@ footer {
 }
 /* Estilo para desktop */
 @media screen and (min-width: 767px){
+  /* Estilo do carrousel */
+  #carrousel > p{ 
+    font-size: 1.5vw;
+    text-align: center;
+    padding: 50px 250px 20px 250px;
+  }
   /* Estilo das sessões */
   #categorias > h1,
   #em_alta > h1,
@@ -176,7 +212,7 @@ footer {
   /* Menus lado a lado */
   header nav > ul > li{
     display: inline-block;
-    margin: 0px 20px 20px 0;
+    margin: 0;
     padding-bottom: 20px;
   }
   header nav > ul > li:first-child{
@@ -185,18 +221,32 @@ footer {
   header nav > ul > li > a {
     text-decoration: none;
   }
+  header > nav > ul > li > a {
+    padding: 10px;
+    background: #2D1880;
+    margin: 0;
+    color: white;
+    font-weight: bold;
+  }
+  header > nav > ul > li > a:hover {
+    background: #6E4AFF;
+    color: white;
+    transition: 0.4s;
+    -webkit-transition: 0.4s;
+  }
   /* Menu dropdown */
   .dropdown-content {
     display: none;
     position: absolute;
-    background-color: #f9f9f9;
+    background-color: #6E4AFF;
     min-width: 160px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
   }
   .dropdown-content a {
+    font-size: 14px;
     color: black;
-    padding: 8px 8px;
+    padding: 3px 8px;
     text-decoration: none;
     display: block;
   }
@@ -211,13 +261,19 @@ footer {
 @media screen and (max-width: 767px) {
   /* Estilo da sessão de carrousel */
   #carrousel > h1{
-    font-size: 15vw;
+    font-size: 14vw;
   }
   #carrousel > h2{ 
     text-align: center;
-    font-size: 6vw;
+    font-size: 5vw;
     color: black;
     margin: 0;
+  }
+  #carrousel > p{ 
+    font-size: 5vw;
+    text-align: justify;
+    text-justify: inter-word;
+    padding: 30px;
   }
   /* Estilo geral das sessões */
   #categorias > h1,
