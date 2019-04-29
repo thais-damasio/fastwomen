@@ -1,0 +1,202 @@
+/* Estilo do cabeçalho */
+header {
+    min-height: 60px;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    border-bottom: 1px solid #ccc;
+    background: #ececec;
+    z-index: 999;
+}
+/* Botão de menu oculto */
+input#control-nav {
+  visibility: hidden;
+  position: absolute;
+  left: -9999px;
+  opacity: 0;
+}
+/* Estilo do corpo da página */
+.linkagens {
+    float: right;
+}
+body {
+    margin-top: 60px !important;
+    padding: 30px;
+}
+body h1 {
+    padding-top: 30px; 
+    text-align: center;
+}
+body h4 {
+    padding-top: 30px; 
+    text-align: center;
+}
+body p{
+    padding: 0px 40px;
+    text-align: justify;
+    text-justify: inter-word;
+}
+/* Estilo do corpo da página */
+body {
+    padding: 30px;
+}
+body h1 {
+    text-align: center;
+}
+.linkagens {
+    float: right;
+}
+/* Estilo das postagens em alta */
+.post {
+    margin: 10px 0;
+    padding: 10px;
+    border: 1px rgb(184, 176, 176) solid;
+}
+.post img {
+    width: 50%;
+}
+.post h4 {
+    font-weight: bold;
+}
+
+ /* Estilo para desktop */
+@media screen and (min-width: 767px){
+    /* Estilo do menu suspenso */
+    nav {
+      position: absolute;
+      right: 0;
+    }
+    /* Menus lado a lado */
+    header nav > ul > li{
+      display: inline-block;
+      margin: 0px 20px 20px 0;
+      padding-bottom: 20px;
+      /*TODO: border-left: solid 1px black; */
+    }
+    header nav > ul > li:first-child{
+        border-left: none;
+    }
+    header nav > ul > li > a {
+      text-decoration: none;
+    }
+    /* Menu dropdown */
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #f9f9f9;
+      min-width: 160px;
+      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+      z-index: 1;
+    }
+    .dropdown-content a {
+      color: black;
+      padding: 8px 8px;
+      text-decoration: none;
+      display: block;
+    }
+    .dropdown-content a:hover {
+      background-color: #f1f1f1
+    }
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+}
+/* Menu lateral para celulares */
+@media screen and (max-width: 767px) {
+    /* Exibi o botão de expandir menu */
+    header .control-nav {
+      position: absolute;
+      left: 20px;
+      top: 20px;
+      display: block;
+      z-index: 2;
+      cursor: pointer;
+    }
+    header .control-nav:after {
+      font-family: 'Font Awesome 5 Free';
+      content: "\f0c9";
+      font-size: 25px;
+      font-weight:900;
+      position: absolute;
+      align-content: center; 
+      top: -5px;
+    }
+    header .control-nav:before {
+      content: "";
+      display: block;
+      height: 3px;
+    }
+    header .control-nav-close {
+      position: fixed;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      display: block;
+      z-index: 1;
+      background: rgba(0, 0, 0, 0.4);
+      -webkit-transition: all 500ms ease;
+      transition: all 500ms ease;
+      -webkit-transform: translate(-100%, 0);
+      -ms-transform: translate(-100%, 0);
+      transform: translate(-100%, 0);
+    }
+    header nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      width: 250px;
+      padding: 30px 15px;
+      border-left: 1px solid #ccc;
+      background: #fff;
+      overflow-x: auto;
+      z-index: 2;
+      -webkit-transition: all 500ms ease;
+      transition: all 500ms ease;
+      -webkit-transform: translate(-100%, 0);
+      -ms-transform: translate(-100%, 0);
+      transform: translate(-100%, 0);
+    }
+    #control-nav:checked ~ .control-nav-close {
+      -webkit-transform: translate(0, 0);
+      -ms-transform: translate(0, 0);
+      transform: translate(0, 0);
+    }
+    #control-nav:checked ~ nav {
+      -webkit-transform: translate(0, 0);
+      -ms-transform: translate(0, 0);
+      transform: translate(0, 0);
+    }
+    /* Menu lateral */
+    header nav ul {
+      list-style-type: none;
+      padding: 0;
+    }
+    header nav li {
+      padding: 5px;
+      border-bottom: 1px black solid;
+    }
+    /* Menu dropdown */
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #f9f9f9;
+      min-width: 160px;
+      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+      z-index: 1;
+    }
+    .dropdown-content a {
+      color: black;
+      padding: 8px 8px;
+      text-decoration: none;
+      display: block;
+    }
+    .dropdown-content a:hover {
+      background-color: #f1f1f1
+    }
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+}
