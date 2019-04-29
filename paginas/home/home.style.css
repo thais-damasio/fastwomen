@@ -3,6 +3,7 @@
 }
 /* Estilo do cabeçalho */
 header {
+  padding: 20px;
   min-height: 60px;
   position: fixed;
   top: 0;
@@ -105,6 +106,9 @@ input#control-nav {
   font-size: 2vw;
 }
 #categorias .categoria button{
+  position: absolute;
+  bottom: 0;
+  right: 0;
   background-color: #4CAF50;
   border: none;
   color: white;
@@ -115,12 +119,15 @@ input#control-nav {
   font-size: 12px;
   -webkit-transition-duration: 0.4s; /* Safari */
   transition-duration: 0.4s;
-  float: right;
+  margin: 10px;
 }
 #categorias .categoria button:hover {
   background-color: rgb(0, 92, 0); /* Green */
   color: white;
 }
+#post1:hover,
+#post2:hover,
+#post3:hover,
 #saude_capilar:hover,
 #saude_intima:hover,
 #receitas_rapidas:hover,
@@ -136,6 +143,7 @@ input#control-nav {
   border: 1px black solid;
   display: inline-block;
   margin: 3px;
+  min-height: 250px;
   padding: 10px;
   font-size: 15px;
 }
