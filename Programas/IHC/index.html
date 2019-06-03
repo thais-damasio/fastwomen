@@ -1,0 +1,430 @@
+<html>
+    
+    <!-- informações da página -->
+    <head>
+        <!-- Configurações gerais -->
+        <meta charset="UTF-8">
+        <meta name="description" content="Que tal um controle sobre seu ciclo menstrual?">
+        <meta name="keywords" content="calendario, menstrual, mentruação, saúde, mulher">
+        <meta name="author" content="Jéssica Mota, Juliana Ribeiro & Thaís Damásio">
+        <meta http-equiv="Content-Language" content="pt-br">
+        <meta name="viewport" 
+        content="width=device-width, height=device-height, initial-scale=1, maximum-scale=1, user-scalable=no" />
+        <!-- Ícone da página -->
+        <link rel="icon" href="imagens/favicon.ico">
+        <!-- Estilos da página -->
+        <link href="./vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="./calendario_menstrual/calendario.style.css">
+        <link href="./vendor/fontawesome/css/all.css" rel="stylesheet">
+        <!-- Scripts da página -->
+        <script type="text/javascript" src="./vendor/jquery/jquery.min.js"></script>
+        <script type="text/javascript" src="./calendario_menstrual/calendario.js"></script>
+        <script type="text/javascript" src="./vendor/bootstrap/js/popper.min.js"></script>
+        <script type="text/javascript" src="./vendor/bootstrap/js/bootstrap.min.js"></script>
+        <title>Fast Women - Calendário Menstrual</title>
+    </head>
+    <!--  -->
+
+    <!-- Cabeçalho da página -->
+    <header>
+        <!-- Controle de menu para celulares -->
+        <input type="checkbox" id="control-nav"/>
+        <label for="control-nav" class="control-nav"></label>
+        <label for="control-nav" class="control-nav-close"></label>
+        <h1 id="title-nav" class="title-nav">Fast Women</h1>
+        <!--  -->
+        <div class="navbar">
+            <ul>
+                <li><a href="#calendario">Calendário Menstrual</a></li>
+                <li><a href="#sobre_nos">Quem somos nós?</a></li>
+            </ul>
+        </div>
+    </header>
+    <!--  -->
+
+    <!-- Corpo da página -->
+    <body>
+        <!-- Logo da página -->
+        <section id="carousel" class="carousel slide" data-ride="carousel">
+            <!-- Indicadores de localização do carrousel -->
+            <ol class="carousel-indicators">
+                <li data-target="#carousel" data-slide-to="0" class="active"></li>
+                <li data-target="#carousel" data-slide-to="1"></li>
+                <li data-target="#carousel" data-slide-to="2"></li>
+            </ol>
+            <!--  -->
+            <!-- Slides do carrousel -->
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img class="d-block imgc" src="./imagens/women.jpg" alt="First slide">
+                    <div class="carousel-caption d-md-block">
+                        <h1 class="d-none d-md-block" style="z-index: 9999">
+                            Fast<img src="./imagens/favicon.ico">Women
+                        </h1>                        
+                        <div class="text">
+                            <h5>Dicas para sua saúde íntima personalizadas de acordo com seu ciclo menstrual, buscamos praticidade para sua saúde.</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img class="d-block imgc" src="./imagens/happywomen.jpg" alt="Second slide">
+                    <div class="carousel-caption d-md-block">
+                        <div class="text">
+                            <h5>Calcule seu calendário menstrual e tenha uma estimativa do comportamento do seu ciclo</h5>
+                            <a href="#calendario">Vamos Lá</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img class="d-block imgc" src="./imagens/three.jpeg" alt="Third slide">
+                    <div class="carousel-caption d-md-block">
+                        <div class="text">
+                            <h5>Você sabe tudo sobre a menstruação? Que tal conhecer um pouco mais a fundo.</h5>
+                            <a href="./dicas/oqemenstruacao.html">Vamos Lá</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--  -->
+            <!-- Controles de navegação do slide -->
+            <a class="carousel-control-prev" href="#carousel" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Anterior</span>
+            </a>
+            <a class="carousel-control-next" href="#carousel" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Próximo</span>
+            </a>
+            <!--  -->
+        </section>
+
+        <!-- Resumos do tema -->
+        <section id="resumos">
+            <br>
+            <h1>Sobre</h1>
+            <div class="row justify-content-center">
+                <div class="col-lg-7 col-md-5 col-sm-6 col-xs-12">
+                    <p style="font-size: 2.5vh; margin: 10px">
+                        A sociedade do séc. XXI traz mulheres cada vez mais antenadas, com
+                        rotinas agitadas e pouco tempo de dedicação para elas mesmas. Se você se
+                        encaixa nesse perfil, que tal umas dicas rápidas para te ajudar um pouco com
+                        sua saúde íntima?
+                        A menstruação faz parte de um longo período da vida da mulher. Ela traz
+                        desafios como cólica, TPM, o fluxo descendo em um dia nada conveniente (como no clube).                       
+                        É importante conhecer seu corpo e cuidar dele. Para saber um pouco mais
+                        sobre isso acesse o link ao lado. Agora,    para buscar informações sobre seu ciclo, bora calcular
+                        seu calendário menstrual? <a style="font-size: 2.5vh" href="#calendario">Vamos lá.</a>
+                    </p>
+                </div>
+                <!-- Dica sobre o que é a menstruação -->
+                <div class="col-lg-4 col-md-5 col-sm-6 col-xs-12">
+                    <div class="tips" onclick="window.location.href='./dicas/oqemenstruacao.html'">
+                        <div class="row">
+                            <div class="col-lg-5 col-md-12 col-sm-12 col-xs-12">
+                                <img src="./imagens/uterus.jpg">
+                            </div>
+                            <div class="col-lg-7 col-md-12 col-sm-12 col-xs-12">
+                                <h4>Como funciona a menstruação?</h4>
+                                <p>
+                                    Menstruação é a descamação das paredes internas do útero quando não há fecundação...
+                                </p>            
+                                    <a href="./dicas/oqemenstruacao.html">Leia mais</a>
+                                <hr>
+                                <small>Postado por Gineco</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--  -->
+            </div>
+            
+            <!--  -->
+            <br>
+            <br>
+            <br>
+            <hr>
+        </section>
+
+        <!-- Calendário Menstrual -->
+        <section class="calendario anchor">
+            <a id="calendario"></a>
+            <div class="row">
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                    <h1>Calendário Menstrual</h1>
+                    <!-- Introdução -->
+                    <div class="intro">
+                        <p>
+                            Que ter uma estimativa de seu período menstrual? Calculando seu calendário menstrual
+                            você consegue ter informações importantes como:
+                        </p>
+                        <ul>
+                            <li>Por volta de quando você estará em pico de ovulação?</li>
+                            <p>
+                                Caso esteja planejando uma gravidez ou apenas quer ter um controle de seu
+                                período fértil, saber uma estimativa de quando ocorrerá seu pico de ovulação
+                                pode te ajudar a se preparar para diversas situações.
+                            </p>
+                            <li>TPM está chegando?</li>
+                            <p>
+                                Imagina ter um encontro marcado a vésperas de uma TPM eminente... melhor
+                                nem imaginar! Vamos dar uma consultadinha no calendário menstrual e evitar
+                                marcar encontros nesses dias estressantes.
+                            </p>
+                            <li>E a menstruação? Quando será que desce?</li>
+                            <p>
+                                Está marcando uma reunião importante e precisa selecionar uma data? Vamos
+                                pensar em dias em que a menstruação não desça para evitar o desconforto ou nos
+                                certificar que estamos preparadas para caso ela chegue.
+                            </p>
+                        </ul>
+                        <p>                
+                            Um calendário menstrual te fornece apenas estimativas,  para detalhes mais a fundo
+                            é interessante consultar um ginecologista. Mas essas estimativas podem te ajudar a preparar
+                            para diversas situações. Vamos calcular?
+                        </p>
+                    </div>
+                    <!-- Campos de preenchimento para cálculo -->
+                    <div class="steps">
+                        <div class="row justify-content-center">
+                            <div class="step col-md-3 col-sm-5 col-xs-12">
+                                <div class="row justify-content-center" style="height: 45px">
+                                    <h5>1. Data da última menstruação?&nbsp;&nbsp;</h5>
+                                </div>
+                                <div class="row justify-content-center">
+                                    <a tabindex="0" class="help" role="button" data-toggle="popover" data-trigger="focus" title="O que é isso?" 
+                                    data-content="Aqui você informa qual foi o primeiro dia da sua última menstruação.">
+                                        <i class="far fa-question-circle"></i>
+                                    </a>
+                                    <input id="ultima_menstruacao" type="date" min="2015-01-01" onkeypress="return false">
+                                </div>
+                                <small>Campo Obrigatório *</small>
+                            </div>
+                            <div class="step col-md-3 col-sm-5 col-xs-12">
+                                <div class="row justify-content-center" style="height: 45px">
+                                    <h5>2. Quantos dias ela durou?&nbsp;&nbsp;</h5>
+                                </div>
+                                <div class="row justify-content-center">
+                                    <a tabindex="0" class="help" role="button" data-toggle="popover" data-trigger="focus" title="O que é isso?" 
+                                    data-content="Aqui você informa qual foi a duração da sua menstruação.">
+                                        <i class="far fa-question-circle"></i>
+                                    </a>
+                                    <input id="duracao_menstruacao" type="number" value="5" min="1" max="20">
+                                </div>
+                                <small>Campo Obrigatório *</small>
+                            </div>
+                            <div class="step col-md-3 col-sm-5 col-xs-12">
+                                <div class="row justify-content-center" style="height: 45px">
+                                    <h5>3. Quanto tempo dura o seu ciclo?&nbsp;&nbsp;</h5>
+                                </div>
+                                <div class="row justify-content-center">
+                                    <a tabindex="0" class="help" role="button" data-toggle="popover" data-trigger="focus" title="O que é isso?" 
+                                    data-content="Um ciclo é a quantidade de dias entre uma menstruação e outra. Caso seu ciclo varie, faça uma média entre os três últimos meses.">
+                                        <i class="far fa-question-circle"></i>
+                                    </a>
+                                    <input id="duracao_ciclo" type="number" value="28" min="1" max="45">
+                                </div>
+                                <small>Campo Obrigatório *</small>
+                            </div>
+                        </div>
+                        <button onclick="exibirCalendario()"><i class="fas fa-calculator"></i> Calcular meu calendário</button>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <br>
+
+            <!-- Calendário menstrual -->
+            <div id="resultado" style="display: none" class="calendario anchor">
+                <a id="resultado-calendario"></a>
+                <div class="row justify-content-center">
+                    <div class="container col-sm-12 col-md-5 col-lg-4 mt-5" style="margin: 10px;">
+                        <div class="card">
+                            <!-- Mês correspondente no calendário -->
+                            <h3 class="card-header" id="monthAndYear"></h3>
+                            <!-- Calendário -->
+                            <table class="table table-bordered" id="calendar">
+                                <!-- Dias da semana -->
+                                <thead>
+                                <tr>
+                                    <th>Dom</th>
+                                    <th>Seg</th>
+                                    <th>Ter</th>
+                                    <th>Qua</th>
+                                    <th>Qui</th>
+                                    <th>Sex</th>
+                                    <th >Sab</th>
+                                </tr>
+                                </thead>
+                                <!-- Dias do mês -->
+                                <tbody id="calendar-body">            
+                                </tbody>
+                            </table>
+
+                            <!-- Navegação entre meses do ano -->
+                            <div class="form-inline">
+                                <div style="margin: 10px; display: block; width: 100%">
+                                    <div><div style="padding: 5px 5px; background: #b8173f; display: inline; margin: 10px;"></div> Dias de menstruação</div>
+                                    <div><div style="padding: 5px 5px; background: #2635b8; display: inline; margin: 10px;"></div> Pico de ovulação</div>
+                                </div>       
+                                <button class="btn btn-outline-primary col-sm-6" id="previous" onclick="previous()">Anterior</button>                    
+                                <button class="btn btn-outline-primary col-sm-6" id="next" onclick="next()">Próximo</button>
+                            </div>
+                            <hr>
+                            <form class="form-inline">
+                                <label class="lead mr-2 ml-2" for="month">Ir para: </label>
+                                <!-- Selecionar um mês do ano -->
+                                <select class="form-control col-sm-4" name="month" id="month" onchange="jump()">
+                                    <option value=0>Jan</option>
+                                    <option value=1>Fev</option>
+                                    <option value=2>Mar</option>
+                                    <option value=3>Abr</option>
+                                    <option value=4>Mai</option>
+                                    <option value=5>Jun</option>
+                                    <option value=6>Jul</option>
+                                    <option value=7>Ago</option>
+                                    <option value=8>Set</option>
+                                    <option value=9>Out</option>
+                                    <option value=10>Nov</option>
+                                    <option value=11>Dez</option>
+                                </select>            
+                                <!-- Selecionar um ano específico -->
+                                <label for="year"></label>
+                                <select class="form-control col-sm-4" name="year" id="year" onchange="jump()">
+                                    <option value=2010>2010</option>
+                                    <option value=2011>2011</option>
+                                    <option value=2012>2012</option>
+                                    <option value=2013>2013</option>
+                                    <option value=2014>2014</option>
+                                    <option value=2015>2015</option>
+                                    <option value=2016>2016</option>
+                                    <option value=2017>2017</option>
+                                    <option value=2018>2018</option>
+                                    <option value=2019>2019</option>
+                                    <option value=2020>2020</option>
+                                    <option value=2021>2021</option>
+                                    <option value=2022>2022</option>
+                                    <option value=2023>2023</option>
+                                    <option value=2024>2024</option>
+                                    <option value=2025>2025</option>
+                                    <option value=2026>2026</option>
+                                    <option value=2027>2027</option>
+                                    <option value=2028>2028</option>
+                                    <option value=2029>2029</option>
+                                    <option value=2030>2030</option>
+                                </select>
+                                <!--  -->
+                            </form>
+                        </div>
+                    </div>
+                    <div class="col-sm-12 col-md-12 col-lg-7 mt-5">                   
+                        <!-- Dicas de artigos -->
+                        <div id="dicas">            
+                            <h3 id="dicas-title"></h3>
+                            <!-- Texto da sessão -->
+                            <div class="row justify-content-center">
+                                <p style="font-size: 2.5vh" id="dicas-text">
+                                </p>
+                            </div>
+                            <!-- Post de dicas -->
+                            <div class="row justify-content-center">
+                                <!-- Dica 1 -->
+                                <div class="column col-lg-4 col-md-4 col-sm-12">
+                                    <div class="post" id="dica1">
+                                        <div class="row">
+                                            <img id="dica1-img">
+                                        </div>
+                                        <div class="row justify-content-center">
+                                            <h4 id="dica1-title"></h4>
+                                            <p id="dica1-text">
+                                            </p> 
+                                            <div class="footer">                       
+                                                <a id="dica1-link"></a>
+                                                <hr>
+                                                <small id="dica1-fonte"></small>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--  -->
+                                <!-- Dica 2 -->
+                                <div class="column col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                                    <div class="post" id="dica2">
+                                        <div class="row">
+                                            <img id="dica2-img">
+                                        </div>
+                                        <div class="row justify-content-center">
+                                            <h4 id="dica2-title"></h4>
+                                            <p id="dica2-text">
+                                            </p>  
+                                            <div class="footer">                                
+                                                <a id="dica2-link"></a>
+                                                <hr>
+                                                <small id="dica2-fonte"></small>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--  -->
+                                <!-- Dica 3 -->
+                                <div class="column col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                                    <div class="post" id="dica3">
+                                        <div class="row">
+                                            <img id="dica3-img">
+                                        </div>
+                                        <div class="row justify-content-center">
+                                            <h4 id="dica3-title"></h4>
+                                            <p id="dica3-text">
+                                            </p>
+                                            <div class="footer">                                
+                                                <a id="dica3-link"></a>
+                                                <hr>
+                                                <small id="dica3-fonte"></small>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--  -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--  -->
+            <br>
+            <br>
+            <br>
+            <hr>
+        </section>
+
+        <!-- Sessão de sobre nós do site -->
+        <section id="sobre_nos">
+            <br>
+            <h1>Quem somos nós?</h1>
+            <div class="row">
+                <div class="col-md-6 col-sm-5 col-xs-12">
+                    <img width="100%" style="object-fit: cover; height: 60vh;" src="imagens/trio.jpeg">
+                </div>
+                <div class="col-md-6 col-sm-7 col-xs-12">
+                    <p>
+                        Somos um trio de garotas apaixonadas pela feminilidade e força que podemos encontrar em cada mulher.
+                        Vivemos em uma sociedade “sem tempo” onde as mulheres estão moldadas em um perfil onde o tempo passa a
+                        ser algo precioso. Atualmente as mulheres trabalham, fazem universidade, são mães, esposas, filhas,
+                        amigas, aventureiras, sonhadoras, e muito mais. Mas elas também precisam de um tempo de dedicação para sua
+                        saúde, inclusive a saúde íntima. Reservamos este espaço para que as "fast women" possam cuidar de seu ciclo
+                        menstrual, fornecemos um calendário com dicas.
+                        Nascemos e fomos criadas em BH, cursamos sistemas de informação e desenvolvemos esse site com muito carinho
+                        pra você, fast women.
+                    </p>
+                </div>
+            </div>
+        </section>
+    </body>
+    <!--  -->
+
+    <!-- Rodapé da página -->
+    <footer>
+        <span>Copyright © 2019 | IHC - Sistemas de Informação</span>
+    </footer>
+    <!--  -->
+</html>

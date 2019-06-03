@@ -1,0 +1,6 @@
+Casos de Uso
+1. O sistema deverá permitir que o usuário realize buscas de posts usando o campo de busca.
+2. O sistema deverá permitir que o usuário visualize todas as dicas postadas.
+3. O sistema deverá permitir que o usuário visualize uma dica específica.
+4. O sistema deverá calcular o calendário menstrual a partir dos dados de entrada do usuário.
+5. O sistema deverá exibir o calendário menstrual de um mês específico que o usuário selecionar.
