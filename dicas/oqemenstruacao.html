@@ -3,7 +3,7 @@
         <!-- Configurações gerais -->
         <meta charset="UTF-8">
         <meta name="description" content="Dicas para seu ciclo menstrual">
-        <meta name="keywords" content="menstração, ciclo, saúde, dicas, dica">
+        <meta name="keywords" content="menstruação, ciclo, saúde, dicas">
         <meta name="author" content="Autor do post 1">
         <meta http-equiv="Content-Language" content="pt-br">
         <meta name="viewport" 
@@ -12,9 +12,10 @@
         <link rel="icon" href="../imagens/favicon.ico">
         <!-- Estilos da página -->
         <link rel="stylesheet" type="text/css" href="post.style.css">
-        <link href="../vendor/fontawesome/css/all.css" rel="stylesheet">
-        <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+        <link href="../importacoes/fontawesome/css/all.css" rel="stylesheet">
+        <link href="../importacoes/bootstrap/css/bootstrap.min.css" rel="stylesheet">
         <!-- Scripts da página -->
+        <script type="text/javascript" src="./post.script.js"></script>
         <title>Fast Women - Post 1</title>
     </head>
 
@@ -27,6 +28,7 @@
         <!--  -->
         <div class="navbar">
             <ul>
+                <li><a href="../index.html#calendario">Calendário Menstrual</a></li>
                 <li><a href="../index.html#sobre_nos">Quem somos nós?</a></li>
             </ul>
         </div>
@@ -41,10 +43,8 @@
         <h1>O que é a menstruação?</h1>
             <!-- Texto da sessão -->
             <div class="row justify-content-center">
-                <!-- <div class="col-md-6 col-sm-5 col-xs-12">
-                    <img src="./imagens/black-friday-buying-casual-1068527.jpg">
-                </div> -->
-                <div class="col-md-8 col-sm-5 col-xs-12">
+                <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12">
+                    <img class="img-post" src="../imagens/oqemenstruacao.jpg">
                     <p style="font-size: 2.5vh">
                         Menstruação é a descamação das paredes internas do útero quando não há fecundação.
                         Essa descamação faz parte do ciclo reprodutivo da mulher e acontece todo mês.
@@ -78,6 +78,8 @@
                     <small>Fonte: https://www.gineco.com.br/saude-feminina/menstruacao/o-que-e/</small>
                 </div>
             </div>
+
+            <button type="button" class="back btn btn-outline-primary" onclick="window.history.back();">Voltar</button> 
     </body>
     
         
