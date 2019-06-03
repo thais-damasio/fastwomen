@@ -266,13 +266,18 @@ footer {
   border: 1px rgb(184, 176, 176) solid;
 }
 .post .footer {
-  background: red;
+  position: absolute;
+  bottom: 20;
+  width: 90%;
 }
 .post a {
   width: 100%;
   display: block;
 }
-#dicas .col {
+.post hr {
+  margin: 5px 0;
+}
+#dicas .column {
   padding: 5px;
 }
 .post img {
@@ -299,13 +304,16 @@ footer {
   @media screen and (max-width: 992px) {
     .tips {
       height: 50vh !important;
-    }    
+    }   
+    .post {
+      height: 60vh;
+    } 
+  } 
+  .post {
+    height: 80vh;
   }
   .tips {
     height: 30vh;
-  }
-  .post {
-    height: 65vh;
   }
   /* Estilo do sobre */
   #sobre_nos {
@@ -339,6 +347,10 @@ footer {
 }
 /* Menu lateral para celulares */
 @media screen and (max-width: 767px) {
+  /* Tamanho do post de dicas */
+  .post {
+    height: 50vh !important;
+  } 
   /* Exibi o botão de expandir menu */
   h1#title-nav {
     display: block;

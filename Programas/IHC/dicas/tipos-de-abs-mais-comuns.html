@@ -3,7 +3,7 @@
     <!-- Configurações gerais -->
     <meta charset="UTF-8" />
     <meta name="description" content="Dicas para seu ciclo menstrual" />
-    <meta name="keywords" content="menstração, ciclo, saúde, dicas, dica" />
+    <meta name="keywords" content="menstruação, ciclo, saúde, dicas, dica, absorvente, tipo" />
     <meta name="author" content="Autor do post 1" />
     <meta http-equiv="Content-Language" content="pt-br" />
     <meta
@@ -17,6 +17,7 @@
     <link href="../vendor/fontawesome/css/all.css" rel="stylesheet" />
     <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
     <!-- Scripts da página -->
+    <script type="text/javascript" src="./post.script.js"></script>
     <title>Fast Women - Post 1</title>
   </head>
 
@@ -37,17 +38,14 @@
 
   <body>
     <div class="linkagens">
-      <a href="../index.html">Home</a> >
+      <a onclick="goback();">Home</a> >
       <b>Os 5 tipos de absorvente mais comuns e como eles funcionam</b>
     </div>
     <br>
     <h1>Os 5 tipos de absorvente mais comuns e como eles funcionam</h1>
     <!-- Texto da sessão -->
     <div class="row justify-content-center">
-      <!-- <div class="col-md-6 col-sm-5 col-xs-12">
-                    <img src="./imagens/black-friday-buying-casual-1068527.jpg">
-                </div> -->
-      <div class="col-md-8 col-sm-5 col-xs-12">
+      <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12">
         <h4>
           De quanto em quanto tempo preciso trocar? Meninas virgens podem usar
           absorvente interno? Tire essas e outras dúvidas relacionadas ao tema.
@@ -60,8 +58,8 @@
           Araújo, ginecologista do Hospital Bandeirantes, nos ajudaram nessa
           missão. Olha só!
         </p>
+        <img class="img-post" src="../imagens/protetor.jpg">
         <ol>
-            <img src="../imagens/protetor.jpg">
           <li style="font-size: 2.5vh">
             <b>Protetor diário: </b> O ideal é que se use esse tipo de absorvente apenas no dia em que começa a 
             menstruação ou no dia em que ela está terminando. Ou seja, quando o fluxo estiver menos 
@@ -81,6 +79,7 @@
             noturnos, eles são mais resistentes e podem ficar no corpo por mais tempo. Se o absorvente irrita a sua pele 
             uma dica legal é fugir dos que possuem cobertura seca e escolher os de algodão ou de celulose.
           </li>
+          <img class="img-post correct" style="float: right; margin-left: 30px; margin-right: 0" src="../imagens/absorvente.jpg">
           <li style="font-size: 2.5vh">
             <b>Absorvente interno: </b> Ainda um tabu para muitas garotas, o absorvente interno tem ganhado mais 
             fãs a cada dia. A parte mais difícil é ter intimidade com o seu corpo para colocar o absorvente sem sustos, 
@@ -92,7 +91,6 @@
             quatro em quatro horas. Meninas virgens podem usar esse tipo de absorvente. Elas só precisam tomar mais cuidado, 
             pois, dependendo do tamanho do absorvente interno e do tipo de hímen, há um risco, mesmo que pequenininho, de a 
             membrana ser rompida. Por isso, vale fazer uma visitinha ao ginecologista antes, ok?
-            <img src="../imagens/absorvente.jpg">
           </li>
           <li style="font-size: 2.5vh">
             <b>Coletor menstrual: </b> O coletor ? também conhecido como “copinho” ? é feito de plástico, um material 
@@ -117,11 +115,19 @@
             usada durante as relações sexuais. A esponjinha pode ser encontrada em algumas lojas virtuais.
           </li>
         </ol>
-        <small
+        <small class="fonte"
           >Fonte:
           https://capricho.abril.com.br/vida-real/os-5-tipos-de-absorvente-mais-comuns-e-como-eles-funcionam/</small
         >
       </div>
     </div>
+
+    <button type="button" class="back btn btn-outline-primary" onclick="goback();">Voltar</button> 
   </body>
+        
+  <!-- Rodapé da página -->
+  <footer>
+      <span>Copyright © 2019 | IHC - Sistemas de Informação</span>
+  </footer>
+  <!--  -->
 </html>

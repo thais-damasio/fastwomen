@@ -102,9 +102,9 @@ function validarEntradas(ultima_menstruacao, duracao_menstruacao, duracao_ciclo)
 function gerarDicas(duracao_menstruacao, duracao_ciclo) {
     // Div de dicas
     let dicas = document.getElementById("dicas");
-    let post1 = dicas.querySelector("#dica1");
-    let post2 = dicas.querySelector("#dica2");
-    let post3 = dicas.querySelector("#dica3");
+    let post1 = document.getElementById("dica1");
+    let post2 = document.getElementById("dica2");
+    let post3 = document.getElementById("dica3");
     dicas.querySelector("#dicas-title").innerHTML = "Teste";
 
     //Dica para menstruação regular
@@ -124,14 +124,14 @@ function gerarDicas(duracao_menstruacao, duracao_ciclo) {
     //Dica para menstruação irregular
     else {
         dicas.querySelector("#dicas-title").innerHTML = "Parece que sua menstruação está irregular!";
-        dicas.querySelector("#dicas-text").innerHTML = "Leia um pouco mais a respeito disso, além de outras dicas abaixo!";
+        dicas.querySelector("#dicas-text").innerHTML = "Uma menstruação regular tem duração entre dois a sete dias, e um intervalo a cada 21 a 35 dias. Leia um pouco mais a respeito disso, além de outras dicas abaixo!";
 
         //Seta post de menstruação irregular (Dicas para menstruação irregular)
-        post1.onclick = "window.location.href = './dicas/menstruacao-irregular-1.html'";
+        post1.onclick = "window.location.href = './dicas/menstruacao-irregular.html'";
         post1.querySelector("#dica1-img").src = "./imagens/clock-flower.jpg";
-        post1.querySelector("#dica1-title").innerHTML = "Menstruação irregular... E agora?";
+        post1.querySelector("#dica1-title").innerHTML = "Menstruação irregular... O que é?";
         post1.querySelector("#dica1-text").innerHTML = "A menstruação irregular é aquela que foge do período normal. Antes de começarmos a falar sobre menstruação irregular, temos que esclarecer alguns pontos.";
-        post1.querySelector("#dica1-link").href = "./dicas/menstruacao-irregular-1.html";
+        post1.querySelector("#dica1-link").href = "./dicas/menstruacao-irregular.html";
         post1.querySelector("#dica1-link").innerHTML = "Leia mais";
         post1.querySelector("#dica1-fonte").innerHTML = "Postado por Minha Vida";
     }
@@ -158,21 +158,21 @@ function gerarDicas(duracao_menstruacao, duracao_ciclo) {
     }
     //Dica de menstruação em geral
     else {
-        //########################### POST DE OVULAÇÂO https://www.tuasaude.com/periodo-fertil/
-        post2.onclick = "window.location.href = './dicas/periodo-fertil.html'";
+        //########################### POST DE OVULAÇÂO
+        post2.onclick = "window.location.href = './dicas/sintomas-periodo-fertil.html'";
         post2.querySelector("#dica2-img").src = "./imagens/egg.jpg";
         post2.querySelector("#dica2-title").innerHTML = "Quando é o período fértil e quais sintomas?";
         post2.querySelector("#dica2-text").innerHTML = "É possível saber quando é o período fértil através dos dias da menstruação e dos sintomas que a mulher apresenta nesta fase do mês.";
-        post2.querySelector("#dica2-link").href = "./dicas/higiene-intima.html";
+        post2.querySelector("#dica2-link").href = "./dicas/sintomas-periodo-fertil.html";
         post2.querySelector("#dica2-link").innerHTML = "Leia mais";
-        post2.querySelector("#dica2-fonte").innerHTML = "Postado por Buscofem"; 
+        post2.querySelector("#dica2-fonte").innerHTML = "Postado por Tua Saúde"; 
 
         //########################### POST COMO SABER SE VOU MENSTRUAR
-        post3.onclick = "window.location.href = './dicas/tipos-de-abs-mais-comuns.html'";
+        post3.onclick = "window.location.href = './dicas/como-saber-se-vou-menstruar.html'";
         post3.querySelector("#dica3-img").src = "./imagens/thinking.jpg";
         post3.querySelector("#dica3-title").innerHTML = "Como saber se vou menstruar?";
         post3.querySelector("#dica3-text").innerHTML = "A menstruação é uma resposta do útero que contrai a fim de eliminar o endométrio, já que o óvulo não foi fecundado.";
-        post3.querySelector("#dica3-link").href = "./dicas/tipos-de-abs-mais-comuns.html";
+        post3.querySelector("#dica3-link").href = "./dicas/como-saber-se-vou-menstruar.html";
         post3.querySelector("#dica3-link").innerHTML = "Leia mais";
         post3.querySelector("#dica3-fonte").innerHTML = "Postado por Buscomfem"; 
     }

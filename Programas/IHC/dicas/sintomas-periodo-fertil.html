@@ -3,7 +3,7 @@
         <!-- Configurações gerais -->
         <meta charset="UTF-8">
         <meta name="description" content="Dicas para seu ciclo menstrual">
-        <meta name="keywords" content="menstração, ciclo, saúde, dicas, dica">
+        <meta name="keywords" content="menstração, ciclo, saúde, dicas, dica, período, fértil, sintomas">
         <meta name="author" content="Autor do post 1">
         <meta http-equiv="Content-Language" content="pt-br">
         <meta name="viewport" 
@@ -15,7 +15,8 @@
         <link href="../vendor/fontawesome/css/all.css" rel="stylesheet">
         <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
         <!-- Scripts da página -->
-        <title>Fast Women - Post 2</title>
+        <script type="text/javascript" src="./post.script.js"></script>
+        <title>Fast Women - Quais sintomas do período fértil?</title>
     </head>
 
     <!-- Cabeçalho da página -->
@@ -27,6 +28,7 @@
         <!--  -->
         <div class="navbar">
             <ul>
+                <li><a href="../index.html#calendario">Calendário Menstrual</a></li>
                 <li><a href="../index.html#sobre_nos">Quem somos nós?</a></li>
             </ul>
         </div>
@@ -35,16 +37,14 @@
 
     <body>
         <div class="linkagens">
-            <a href="../index.html">Home</a> > <b>Quais sintomas do período fértil?</b>
+            <a onclick="goback();">Home</a> > <b>Quais sintomas do período fértil?</b>
         </div>
         <br>
         <h1>Quais sintomas do período fértil?</h1>
             <!-- Texto da sessão -->
             <div class="row justify-content-center">
-                <!-- <div class="col-md-6 col-sm-5 col-xs-12">
-                    <img src="./imagens/black-friday-buying-casual-1068527.jpg">
-                </div> -->
-                <div class="col-md-8 col-sm-5 col-xs-12">
+                <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12">
+                    <img class="img-post" src="../imagens/egg.jpg">
                     <p style="font-size: 2.5vh">
                         O principal sintoma de período fértil é o aumento da secreção vaginal, mas existem outros que
                         surgem quando o óvulo é liberado pelo ovário e chega até as trompas de Falópio, estando pronto
@@ -90,6 +90,14 @@
                     <small>Fonte: https://www.tuasaude.com/periodo-fertil/</small>
                 </div>
             </div>
+
+            <button type="button" class="back btn btn-outline-primary" onclick="goback();">Voltar</button> 
     </body>
 
+        
+    <!-- Rodapé da página -->
+    <footer>
+        <span>Copyright © 2019 | IHC - Sistemas de Informação</span>
+    </footer>
+    <!--  -->
 </html>
