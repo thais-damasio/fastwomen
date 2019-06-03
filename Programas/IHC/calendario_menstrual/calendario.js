@@ -2,8 +2,8 @@ let today = new Date();
 let nearMenstruation = false;
 let currentMonth = today.getMonth();
 let currentYear = today.getFullYear();
-$(document).ready(function(){
-    $('[data-toggle="popover"]').popover();   
+$(document).ready(function () {
+    $('[data-toggle="popover"]').popover();
 });
 
 let months = ["Jan", "Fev", "Mar", "Abr", "Mai", "Jun", "Jul", "Ago", "Set", "Out", "Nov", "Dez"];
@@ -11,35 +11,55 @@ let months = ["Jan", "Fev", "Mar", "Abr", "Mai", "Jun", "Jul", "Ago", "Set", "Ou
 window.onload = maxDate;
 //Função para definir o max do input date como a data atual
 function maxDate() {
-    var today = new Date();
-    var dd = today.getDate();
-    var mm = today.getMonth() + 1; //January is 0!
-    var yyyy = today.getFullYear();
-    if (dd < 10) {
-        dd = '0' + dd
+    //Mantem as dicas visiveis caso volte de página
+    if(localStorage.getItem('voltar') === 'true'){    
+        exibirCalendario(true);
+        localStorage.setItem('voltar', 'false');
     }
-    if (mm < 10) {
-        mm = '0' + mm
-    }
+    else {
+        var today = new Date();
+        var dd = today.getDate();
+        var mm = today.getMonth() + 1; //January is 0!
+        var yyyy = today.getFullYear();
+        if (dd < 10) {
+            dd = '0' + dd
+        }
+        if (mm < 10) {
+            mm = '0' + mm
+        }
 
-    today = yyyy + '-' + mm + '-' + dd;
-    document.getElementById("ultima_menstruacao").setAttribute('max', today);
-    document.getElementById("ultima_menstruacao").valueAsDate = new Date();
+        today = yyyy + '-' + mm + '-' + dd;
+        document.getElementById("ultima_menstruacao").setAttribute('max', today);
+        document.getElementById("ultima_menstruacao").valueAsDate = new Date();
+    }
 }
-function exibirCalendario() {
+function exibirCalendario(back = false) {
     let ultima_menstruacao = document.getElementById("ultima_menstruacao").value;
     let duracao_menstruacao = document.getElementById("duracao_menstruacao").value;
     let duracao_ciclo = document.getElementById("duracao_ciclo").value;
 
     if (validarEntradas(ultima_menstruacao, duracao_menstruacao, duracao_ciclo)) {
+        if(back) {
+            ultima_menstruacao = localStorage.getItem("ultima_menstruacao");
+            duracao_menstruacao = localStorage.getItem("duracao_menstruacao");
+            duracao_ciclo =localStorage.getItem("duracao_ciclo");            
+        }
         showCalendar(ultima_menstruacao, duracao_menstruacao, duracao_ciclo, currentMonth, currentYear);
+
+        //Armazena no storage
+        localStorage.setItem("ultima_menstruacao", ultima_menstruacao);
+        localStorage.setItem("duracao_menstruacao", duracao_menstruacao);
+        localStorage.setItem("duracao_ciclo", duracao_ciclo);
+
         gerarDicas(duracao_menstruacao, duracao_ciclo);
         document.getElementById("resultado").style.visibility = "visible";
         document.getElementById("resultado").style.display = "block";
-        window.location.href = "#resultado";
+        window.location.href = "#resultado-calendario";
     }
 }
 function validarEntradas(ultima_menstruacao, duracao_menstruacao, duracao_ciclo) {
+    let dateCompair = new Date(ultima_menstruacao);
+
     if (eval(duracao_ciclo) < eval(duracao_menstruacao) + 4) {
         alert("Ops! A duração do ciclo está muito pequena.");
         return false;
@@ -64,8 +84,12 @@ function validarEntradas(ultima_menstruacao, duracao_menstruacao, duracao_ciclo)
         alert("Ops! A data da última menstruação não foi preenchida.");
         return false;
     }
-    if (!duracao_menstruacao) {
-        alert("Ops! A duração da menstruação não foi informada.");
+    if (!ultima_menstruacao) {
+        alert("Ops! A data da última menstruação não foi preenchida.");
+        return false;
+    }
+    if (dateCompair.getTime() > today.getTime()) {
+        alert("Ops! A data informada não pode ser superior a data de hoje.");
         return false;
     }
     if (!duracao_ciclo) {
@@ -84,43 +108,75 @@ function gerarDicas(duracao_menstruacao, duracao_ciclo) {
     dicas.querySelector("#dicas-title").innerHTML = "Teste";
 
     //Dica para menstruação regular
-    if(duracao_menstruacao >= 2 && duracao_menstruacao <= 7 && duracao_ciclo >= 21 && duracao_ciclo <= 35){
+    if (duracao_menstruacao >= 2 && duracao_menstruacao <= 7 && duracao_ciclo >= 21 && duracao_ciclo <= 35) {
         dicas.querySelector("#dicas-title").innerHTML = "Parece que sua menstruação é regular!";
         dicas.querySelector("#dicas-text").innerHTML = "Agora que seu calendário menstrual foi gerado, segue algumas dicas interessantes para você!";
 
-        //Seta post de menstruação irregular
-        post1.onclick = "window.location.href = './dicas/post1.html'";
-        post1.querySelector("#dica1-img").src = "./imagens/menstruacao.jpg";
-        post1.querySelector("#dica1-title").innerHTML = "Post 1";
-        post1.querySelector("#dica1-text").innerHTML =  "Teste de texto";
-        post1.querySelector("#dica1-link").href = "./dicas/post1.html";
+        //Seta post de menstruação regular (Dicas para cólica)
+        post1.onclick = "window.location.href = './dicas/aliviar-colica.html'";
+        post1.querySelector("#dica1-img").src = "./imagens/soprando.jpg";
+        post1.querySelector("#dica1-title").innerHTML = "10 dicas para fugir da cólica";
+        post1.querySelector("#dica1-text").innerHTML = "Sabemos que algumas mulheres sofrem com a dorzinha incomodante da cólica. Reunimos 10 dicas para ajudar a fugir dela de forma fácil e prática.";
+        post1.querySelector("#dica1-link").href = "./dicas/aliviar-colica.html";
         post1.querySelector("#dica1-link").innerHTML = "Leia mais";
-        post1.querySelector("#dica1-fonte").innerHtml = "Teste de fonte";
-
+        post1.querySelector("#dica1-fonte").innerHTML = "Postado por Gauchaz";
     }
     //Dica para menstruação irregular
     else {
         dicas.querySelector("#dicas-title").innerHTML = "Parece que sua menstruação está irregular!";
         dicas.querySelector("#dicas-text").innerHTML = "Leia um pouco mais a respeito disso, além de outras dicas abaixo!";
 
+        //Seta post de menstruação irregular (Dicas para menstruação irregular)
+        post1.onclick = "window.location.href = './dicas/menstruacao-irregular-1.html'";
+        post1.querySelector("#dica1-img").src = "./imagens/clock-flower.jpg";
+        post1.querySelector("#dica1-title").innerHTML = "Menstruação irregular... E agora?";
+        post1.querySelector("#dica1-text").innerHTML = "A menstruação irregular é aquela que foge do período normal. Antes de começarmos a falar sobre menstruação irregular, temos que esclarecer alguns pontos.";
+        post1.querySelector("#dica1-link").href = "./dicas/menstruacao-irregular-1.html";
+        post1.querySelector("#dica1-link").innerHTML = "Leia mais";
+        post1.querySelector("#dica1-fonte").innerHTML = "Postado por Minha Vida";
     }
 
-    //Dicas para a mulher quando a mesntruação está próxima
-    if(this.nearMenstruation){
-        //Seta post de menstruação irregular
-        post3.onclick = "window.location.href = './dicas/post3.html'";
-        post3.querySelector("#dica3-img").src = "./imagens/soprando.jpg";
-        post3.querySelector("#dica3-title").innerHTML = "Post 3";
-        post3.querySelector("#dica3-text").innerHTML =  "Teste de texto";
-        post3.querySelector("#dica3-link").href = "./dicas/post3.html";
+    //Dicas para a mulher quando a menstruação está próxima
+    if (this.nearMenstruation) {
+        //########################### POST DE HIGIENE
+        post2.onclick = "window.location.href = './dicas/higiene-intima.html'";
+        post2.querySelector("#dica2-img").src = "./imagens/pato.jpg";
+        post2.querySelector("#dica2-title").innerHTML = "Higiene íntima durante a menstruação";
+        post2.querySelector("#dica2-text").innerHTML = "Cuidar da higiene íntima é imprescindível para ambos os sexos. Os aparelhos reprodutivos merecem ter uma devida atenção.";
+        post2.querySelector("#dica2-link").href = "./dicas/higiene-intima.html";
+        post2.querySelector("#dica2-link").innerHTML = "Leia mais";
+        post2.querySelector("#dica2-fonte").innerHTML = "Postado por Buscofem"; 
+
+        //########################### POST DE QUAL ABS USAR
+        post3.onclick = "window.location.href = './dicas/tipos-de-abs-mais-comuns.html'";
+        post3.querySelector("#dica3-img").src = "./imagens/menstruacao.jpg";
+        post3.querySelector("#dica3-title").innerHTML = "Os 5 tipos de absorvente mais comuns e como eles funcionam";
+        post3.querySelector("#dica3-text").innerHTML = "De quanto em quanto tempo preciso trocar? Meninas virgens podem usar absorvente interno? Tire essas e outras dúvidas relacionadas ao tema.";
+        post3.querySelector("#dica3-link").href = "./dicas/tipos-de-abs-mais-comuns.html";
         post3.querySelector("#dica3-link").innerHTML = "Leia mais";
-        post3.querySelector("#dica3-fonte").innerHtml = "Teste de fonte";
+        post3.querySelector("#dica3-fonte").innerHTML = "Postado por capricho";   
     }
     //Dica de menstruação em geral
     else {
-        clearPost(post3, "#dica3");
+        //########################### POST DE OVULAÇÂO https://www.tuasaude.com/periodo-fertil/
+        post2.onclick = "window.location.href = './dicas/periodo-fertil.html'";
+        post2.querySelector("#dica2-img").src = "./imagens/egg.jpg";
+        post2.querySelector("#dica2-title").innerHTML = "Quando é o período fértil e quais sintomas?";
+        post2.querySelector("#dica2-text").innerHTML = "É possível saber quando é o período fértil através dos dias da menstruação e dos sintomas que a mulher apresenta nesta fase do mês.";
+        post2.querySelector("#dica2-link").href = "./dicas/higiene-intima.html";
+        post2.querySelector("#dica2-link").innerHTML = "Leia mais";
+        post2.querySelector("#dica2-fonte").innerHTML = "Postado por Buscofem"; 
 
+        //########################### POST COMO SABER SE VOU MENSTRUAR
+        post3.onclick = "window.location.href = './dicas/tipos-de-abs-mais-comuns.html'";
+        post3.querySelector("#dica3-img").src = "./imagens/thinking.jpg";
+        post3.querySelector("#dica3-title").innerHTML = "Como saber se vou menstruar?";
+        post3.querySelector("#dica3-text").innerHTML = "A menstruação é uma resposta do útero que contrai a fim de eliminar o endométrio, já que o óvulo não foi fecundado.";
+        post3.querySelector("#dica3-link").href = "./dicas/tipos-de-abs-mais-comuns.html";
+        post3.querySelector("#dica3-link").innerHTML = "Leia mais";
+        post3.querySelector("#dica3-fonte").innerHTML = "Postado por Buscomfem"; 
     }
+
     //Reseta a variável
     this.nearMenstruation = false;
 }
@@ -129,10 +185,10 @@ function clearPost(post, key) {
     post.onclick = null;
     post.querySelector(key + "-img").src = null;
     post.querySelector(key + "-title").innerHTML = null;
-    post.querySelector(key + "-text").innerHTML =  null;
+    post.querySelector(key + "-text").innerHTML = null;
     post.querySelector(key + "-link").href = null;
     post.querySelector(key + "-link").innerHTML = null;
-    post.querySelector(key + "-fonte").innerHtml = null;
+    post.querySelector(key + "-fonte").innerHTML = null;
 
 }
 // Função para definir o calendário
@@ -231,31 +287,31 @@ function showCalendar(ul_menstruacao, menstruacao, ciclo, month, year) {
                 let cell = document.createElement("td");
                 let cellText = document.createTextNode(date);
 
-                
+
                 //Marca os dias de menstruação para cada ciclo posterior a data de menstruação
                 if (calc <= menstruacao && calc != 0 && date_menstruacao.getTime() < dateCompair.getTime())
                     cell.classList.add("dia_menstruacao");
-                //Marca os dias de menstruação para cada ciclo anterior a data de mesntruação
+                //Marca os dias de menstruação para cada ciclo anterior a data de menstruação
                 else if ((calc == 0 || calc > limitCicloAnt) && date_menstruacao.getTime() > dateCompair.getTime())
                     cell.classList.add("dia_menstruacao");
-                //Marca os dias de ovulação para cada ciclo posterior a data de mesntruação
+                //Marca os dias de ovulação para cada ciclo posterior a data de menstruação
                 else if (calc > initOv && calc <= limitOv && date_menstruacao.getTime() < dateCompair.getTime())
                     cell.classList.add("ovulacao");
-                //Marca os dias de ovulação para cada ciclo anterior a data de mesntruação
+                //Marca os dias de ovulação para cada ciclo anterior a data de menstruação
                 else if (calc <= initOvAnt && calc > limitOvAnt && date_menstruacao.getTime() > dateCompair.getTime())
                     cell.classList.add("ovulacao");
                 //Marca a data de hoje
                 if (date === today.getDate() && year === today.getFullYear() && month === today.getMonth()) {
-                    if(cell.classList.contains("dia_menstruacao"))
-                     this.nearMenstruation = true;
+                    if (cell.classList.contains("dia_menstruacao"))
+                        this.nearMenstruation = true;
                     cell.style.border = "3px solid green";
                 }
                 //Compara se a menstruação é no dia atual ou até dois dias antes
-                else if(cell.classList.contains("dia_menstruacao") && (date + 2 % daysInMonth) === today.getDate() && year === today.getFullYear() && month === today.getMonth()) {
+                else if (cell.classList.contains("dia_menstruacao") && (eval(date) - 2 % daysInMonth) === today.getDate() && year === today.getFullYear() && month === today.getMonth()) {
                     this.nearMenstruation = true;
                 }
                 //Compara se a menstruação é no dia atual ou até dois dias antes
-                else if(cell.classList.contains("dia_menstruacao") && (date + 1 % daysInMonth) === today.getDate() && year === today.getFullYear() && month === today.getMonth()) {
+                else if (cell.classList.contains("dia_menstruacao") && (eval(date) - 1 % daysInMonth) === today.getDate() && year === today.getFullYear() && month === today.getMonth()) {
                     this.nearMenstruation = true;
                 }
 

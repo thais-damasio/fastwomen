@@ -178,7 +178,8 @@
                             </p>
                         </ul>
                         <p>                
-                            Um calendário menstrual te fornece essas e outras informações, além de te preparar
+                            Um calendário menstrual te fornece apenas estimativas,  para detalhes mais a fundo
+                            é interessante consultar um ginecologista. Mas essas estimativas podem te ajudar a preparar
                             para diversas situações. Vamos calcular?
                         </p>
                     </div>
@@ -233,9 +234,10 @@
             <br>
 
             <!-- Calendário menstrual -->
-            <div id="resultado" style="display: none">
-                <div class="row">
-                    <div class="container col-sm-8 col-md-5 col-lg-4 mt-5" style="margin: 10px;">
+            <div id="resultado" style="display: none" class="calendario anchor">
+                <a id="resultado-calendario"></a>
+                <div class="row justify-content-center">
+                    <div class="container col-sm-12 col-md-5 col-lg-4 mt-5" style="margin: 10px;">
                         <div class="card">
                             <!-- Mês correspondente no calendário -->
                             <h3 class="card-header" id="monthAndYear"></h3>
@@ -260,7 +262,7 @@
 
                             <!-- Navegação entre meses do ano -->
                             <div class="form-inline">
-                                <div style="margin: 10px;">
+                                <div style="margin: 10px; display: block; width: 100%">
                                     <div><div style="padding: 5px 5px; background: #b8173f; display: inline; margin: 10px;"></div> Dias de menstruação</div>
                                     <div><div style="padding: 5px 5px; background: #2635b8; display: inline; margin: 10px;"></div> Pico de ovulação</div>
                                 </div>       
@@ -314,70 +316,74 @@
                             </form>
                         </div>
                     </div>
-                    <div class="col-sm-4 col-md-7 col-lg-7 mt-5">
-                        <div class="row">                            
-                            <!-- Dicas de artigos -->
-                            <div id="dicas">            
-                                <h3 id="dicas-title"></h3>
-                                <!-- Texto da sessão -->
-                                <div class="row justify-content-center">
-                                    <p style="font-size: 2.5vh" id="dicas-text">
-                                    </p>
-                                </div>
-                                <!-- Post de dicas -->
-                                <div class="row justify-content-center">
-                                    <!-- Dica 1 -->
-                                    <div class="col col-md-4 col-sm-12 col-xs-12">
-                                        <div class="post" id="dica1">
-                                            <div class="row">
-                                                <img id="dica1-img">
-                                            </div>
-                                            <div class="row">
-                                                <h4 id="dica1-title"></h4>
-                                                <p id="dica1-text">
-                                                </p>                                
+                    <div class="col-sm-12 col-md-12 col-lg-7 mt-5">                   
+                        <!-- Dicas de artigos -->
+                        <div id="dicas">            
+                            <h3 id="dicas-title"></h3>
+                            <!-- Texto da sessão -->
+                            <div class="row justify-content-center">
+                                <p style="font-size: 2.5vh" id="dicas-text">
+                                </p>
+                            </div>
+                            <!-- Post de dicas -->
+                            <div class="row justify-content-center">
+                                <!-- Dica 1 -->
+                                <div class="col col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                                    <div class="post" id="dica1">
+                                        <div class="row">
+                                            <img id="dica1-img">
+                                        </div>
+                                        <div class="row justify-content-center">
+                                            <h4 id="dica1-title"></h4>
+                                            <p id="dica1-text">
+                                            </p> 
+                                            <div class="footer">                       
                                                 <a id="dica1-link"></a>
                                                 <hr>
                                                 <small id="dica1-fonte"></small>
                                             </div>
                                         </div>
                                     </div>
-                                    <!--  -->
-                                    <!-- Dica 2 -->
-                                    <div class="col col-md-4 col-sm-12 col-xs-12">
-                                        <div class="post" id="dica2">
-                                            <div class="row">
-                                                <img id="dica2-img">
-                                            </div>
-                                            <div class="row">
-                                                <h4 id="dica2-title"></h4>
-                                                <p id="dica2-text">
-                                                </p>                                
+                                </div>
+                                <!--  -->
+                                <!-- Dica 2 -->
+                                <div class="col col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                                    <div class="post" id="dica2">
+                                        <div class="row">
+                                            <img id="dica2-img">
+                                        </div>
+                                        <div class="row justify-content-center">
+                                            <h4 id="dica2-title"></h4>
+                                            <p id="dica2-text">
+                                            </p>  
+                                            <div class="footer">                                
                                                 <a id="dica2-link"></a>
                                                 <hr>
                                                 <small id="dica2-fonte"></small>
                                             </div>
                                         </div>
                                     </div>
-                                    <!--  -->
-                                    <!-- Dica 3 -->
-                                    <div class="col col-md-4 col-sm-12 col-xs-12">
-                                        <div class="post" id="dica3">
-                                            <div class="row">
-                                                <img id="dica3-img">
-                                            </div>
-                                            <div class="row">
-                                                <h4 id="dica3-title"></h4>
-                                                <p id="dica3-text">
-                                                </p>                                
+                                </div>
+                                <!--  -->
+                                <!-- Dica 3 -->
+                                <div class="col col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                                    <div class="post" id="dica3">
+                                        <div class="row">
+                                            <img id="dica3-img">
+                                        </div>
+                                        <div class="row justify-content-center">
+                                            <h4 id="dica3-title"></h4>
+                                            <p id="dica3-text">
+                                            </p>
+                                            <div class="footer">                                
                                                 <a id="dica3-link"></a>
                                                 <hr>
                                                 <small id="dica3-fonte"></small>
                                             </div>
                                         </div>
                                     </div>
-                                    <!--  -->
                                 </div>
+                                <!--  -->
                             </div>
                         </div>
                     </div>

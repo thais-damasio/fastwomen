@@ -265,6 +265,13 @@ footer {
   font-size: 15px;
   border: 1px rgb(184, 176, 176) solid;
 }
+.post .footer {
+  background: red;
+}
+.post a {
+  width: 100%;
+  display: block;
+}
 #dicas .col {
   padding: 5px;
 }
@@ -274,8 +281,9 @@ footer {
   object-fit: cover;
 }
 .post h4 {
+  margin: 2px;
   font-weight: bold;
-  font-size: 18px;
+  font-size: 13px;
 }
 .post:hover {
   background: rgb(203, 161, 255);
@@ -297,7 +305,7 @@ footer {
     height: 30vh;
   }
   .post {
-    height: 38vh;
+    height: 65vh;
   }
   /* Estilo do sobre */
   #sobre_nos {
