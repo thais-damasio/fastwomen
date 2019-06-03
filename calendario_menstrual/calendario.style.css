@@ -181,6 +181,9 @@ body h1 {
   font-size: 2.5vh;
 }
 /* Estilo dos inputs de configuração */
+.error {
+  color: rgb(250, 167, 167) !important;
+}
 .steps {
   text-align: center;
 }

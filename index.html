@@ -195,8 +195,9 @@
                                     data-content="Aqui você informa qual foi o primeiro dia da sua última menstruação.">
                                         <i class="far fa-question-circle"></i>
                                     </a>
-                                    <input id="ultima_menstruacao" type="date" min="2015-01-01" onkeypress="return false">
+                                    <input id="ultima_menstruacao" type="date" min="2015-01-01" onkeypress="return false" onblur="validateField(event)">
                                 </div>
+                                <small id="error-data" class="error"></small>
                                 <small>Campo Obrigatório *</small>
                             </div>
                             <div class="step col-md-3 col-sm-5 col-xs-12">
@@ -208,8 +209,9 @@
                                     data-content="Aqui você informa qual foi a duração da sua menstruação.">
                                         <i class="far fa-question-circle"></i>
                                     </a>
-                                    <input id="duracao_menstruacao" type="number" value="5" min="1" max="20">
+                                    <input id="duracao_menstruacao" type="number" value="5" min="1" max="20" onblur="validateField(event)">
                                 </div>
+                                <small id="error-dias" class="error"></small>
                                 <small>Campo Obrigatório *</small>
                             </div>
                             <div class="step col-md-3 col-sm-5 col-xs-12">
@@ -221,8 +223,9 @@
                                     data-content="Um ciclo é a quantidade de dias entre uma menstruação e outra. Caso seu ciclo varie, faça uma média entre os três últimos meses.">
                                         <i class="far fa-question-circle"></i>
                                     </a>
-                                    <input id="duracao_ciclo" type="number" value="28" min="1" max="45">
+                                    <input id="duracao_ciclo" type="number" value="28" min="1" max="45" onblur="validateField(event)">
                                 </div>
+                                <small id="error-ciclo" class="error"></small>
                                 <small>Campo Obrigatório *</small>
                             </div>
                         </div>

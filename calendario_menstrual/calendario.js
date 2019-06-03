@@ -9,6 +9,43 @@ $(document).ready(function () {
 let months = ["Jan", "Fev", "Mar", "Abr", "Mai", "Jun", "Jul", "Ago", "Set", "Out", "Nov", "Dez"];
 
 window.onload = maxDate;
+//Validar campos separadamente
+function validateField(ev){
+    switch(ev.target.id){
+        case 'ultima_menstruacao':
+        let dateCompair = new Date(ev.target.value);
+        
+        if (dateCompair.getTime() > today.getTime()) {
+            document.getElementById("error-data").innerHTML = "A data informada não pode ser superior a data de hoje.";
+        }
+        else {
+            document.getElementById("error-data").innerHTML = "";
+        }
+        break;
+        case 'duracao_menstruacao':        
+        if (ev.target.value > 20) {
+            document.getElementById("error-dias").innerHTML = "Ops! Os dias de duração da menstruação não pode ser superior a 20.";
+        }
+        else if (ev.target.value <= 0) {
+            document.getElementById("error-dias").innerHTML = "Ops! A duração da menstruação não pode ser negativo ou igual a 0.";
+        }
+        else {
+            document.getElementById("error-dias").innerHTML = "";
+        }
+        break;
+        case 'duracao_ciclo':
+        if (ev.target.value <= 0) {
+            document.getElementById("error-ciclo").innerHTML = "Ops! O ciclo não pode ser negativo ou igual a 0.";
+        }
+        else if (ev.target.value > 45) {
+            document.getElementById("error-ciclo").innerHTML = "Ops! A duração do ciclo está muito grande, o máximo é 45.";
+        }
+        else {
+            document.getElementById("error-ciclo").innerHTML = "";
+        }
+        break;
+    }
+}
 //Função para definir o max do input date como a data atual
 function maxDate() {
     //Mantem as dicas visiveis caso volte de página
@@ -73,11 +110,11 @@ function validarEntradas(ultima_menstruacao, duracao_menstruacao, duracao_ciclo)
         return false;
     }
     if (duracao_ciclo > 45) {
-        alert("Ops! A duração da menstruação está muito grande, o máximo é 20.");
+        alert("Ops! A duração do ciclo está muito grande, o máximo é 45.");
         return false;
     }
     if (duracao_menstruacao > 20) {
-        alert("Ops! O tamanho d0 ciclo está muito grande, o máximo é 45.");
+        alert("Ops! O tamanho do ciclo está muito grande, o máximo é 45.");
         return false;
     }
     if (!ultima_menstruacao) {
