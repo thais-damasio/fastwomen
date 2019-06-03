@@ -349,7 +349,7 @@ footer {
 @media screen and (max-width: 767px) {
   /* Tamanho do post de dicas */
   .post {
-    height: 50vh !important;
+    height: 65vh !important;
   } 
   /* Exibi o botão de expandir menu */
   h1#title-nav {
