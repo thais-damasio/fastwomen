@@ -1,5 +1,7 @@
 # ![flower][logo] Fast Women ![flower][logo]
 *Um sistema voltado para a saúde íntima das mulheres polivalentes do séc. XXI!*
+
+Visite nosso site: https://fastwomen.herokuapp.com/ ![love][heart]
 ***
 Contexto da Disciplina
 ------
@@ -33,3 +35,4 @@ Dependências
 O sistema trabalha com o uso de HTML, CSS e Javascript.
 
 [logo]: https://img.icons8.com/office/16/000000/spring.png "Flower"
+[heart]: https://img.icons8.com/material-two-tone/24/000000/novel.png "Heart"
