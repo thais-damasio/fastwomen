@@ -19,6 +19,7 @@ Desenvolvedoras
 ------
 * Thaís Damásio
 * Jéssica Mota
+* Juliana Ribeiro
 ***
 Casos de Uso
 ------
